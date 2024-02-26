@@ -345,7 +345,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 
         // Check if dictionary is empty.
         if (isEmpty()) {
-            return null;
+            throw new DictionaryException("Dictionary is Empty");
         }
 
         // Traverse the left subtrees of the dictionary, until empty left subtree reached.
@@ -368,14 +368,14 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 
         // Check if dictionary is empty.
         if (isEmpty()) {
-            return null;
+            throw new DictionaryException("Dictionary is Empty");
         }
 
         // Traverse the right subtrees of the dictionary, until empty right subtree reached.
         Node largest = root;
 
-        while (largest.hasLeftChild()) {
-            largest = largest.getLeftChild();
+        while (largest.hasRightChild()) {
+            largest = largest.getRightChild();
         }
 
         return largest.getData();
