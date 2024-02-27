@@ -126,23 +126,30 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 
         // Check if the key is actually present in the BST.
         while (current != null && comparision != 0) {
-            comparision = k.compareTo(current.getData().getDataKey());
             if (comparision == -1)
                 current = current.getLeftChild();
             else
                 current = current.getRightChild();
+            if (current != null)
+                comparision = k.compareTo(current.getData().getDataKey());
         }
 
         // Key not found.
         if (current == null) {
             throw new DictionaryException("There is no record that matches the given key");
         }
+        // Check if the dictionary only has one element.
+        /*if (current.isLeaf()) {
+            current = null;
+            return;
+        }*/
+
         // Current is now the node to be removed.
 
         Node par = current.getParent(); // The Node's parent.
 
         // Check if the node to be deleted has at most one child.
-        if ((!current.hasLeftChild()) || (!current.hasRightChild())) {
+        if (!(current.hasLeftChild()) || !(current.hasRightChild())) {
             Node newCurrent; // newCurrent will replace the node to be deleted.
 
             // If the left child does not exist, replace node with right child.
@@ -150,6 +157,13 @@ public class OrderedDictionary implements OrderedDictionaryADT {
                 newCurrent = current.getRightChild();
             else // Replace with left child.
                 newCurrent = current.getLeftChild();
+
+            // Check if the node to be deleted is the root.
+            /*if (par == null) {
+                // return newCurrent;
+                root = newCurrent;
+                return;
+            }*/
 
             // Check if the node to be deleted is it's parent's left or right
             // child and then replace this with newCurr (complete replacement).
@@ -350,7 +364,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
         // Write this method
 
         // Check if dictionary is empty.
-        if (isEmpty()) {
+        if (root == null) {
             throw new DictionaryException("Dictionary is Empty");
         }
 
@@ -373,7 +387,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
         // Write this method
 
         // Check if dictionary is empty.
-        if (isEmpty()) {
+        if (root == null) {
             throw new DictionaryException("Dictionary is Empty");
         }
 
