@@ -155,18 +155,87 @@ public class BirdsController implements Initializable {
 
     public void first() {
         // Write this method
+
+        BirdRecord initialBird = null;
+        try {
+            initialBird = database.smallest();
+        }
+        catch (DictionaryException ex) {
+            displayAlert(ex.getMessage());
+        }
+
+        if (database.isEmpty()) {
+            this.BirdPortal.setVisible(false);
+            displayAlert("No more birds in the database to show");
+        } else {
+            if (initialBird != null) {
+                bird = initialBird;
+                showBird();
+            }
+        }
     }
 
     public void last() {
         // Write this method
+
+        BirdRecord lastBird = null;
+        try {
+            lastBird = database.largest();
+        }
+        catch (DictionaryException ex) {
+            displayAlert(ex.getMessage());
+        }
+
+        if (database.isEmpty()) {
+            this.BirdPortal.setVisible(false);
+            displayAlert("No more birds in the database to show");
+        } else {
+            if (lastBird != null) {
+                bird = lastBird;
+                showBird();
+            }
+        }
     }
 
     public void next() {
         // Write this method;
+
+        BirdRecord nextBird = null;
+        try {
+            nextBird = database.successor(bird.getDataKey());
+        } catch (DictionaryException ex) {
+            displayAlert(ex.getMessage());
+        }
+
+        if (database.isEmpty()) {
+            this.BirdPortal.setVisible(false);
+            displayAlert("No more birds in the database to show");
+        } else {
+            if (nextBird != null) {
+                bird = nextBird;
+                showBird();
+            }
+        }
     }
 
     public void previous() {
         // Write this method
+
+        BirdRecord previousBird = null;
+        try {
+            previousBird = database.predecessor(bird.getDataKey());
+        } catch (DictionaryException ex) {
+            displayAlert(ex.getMessage());
+        }
+        if (database.isEmpty()) {
+            this.BirdPortal.setVisible(false);
+            displayAlert("No more birds in the database to show");
+        } else {
+            if (previousBird != null) {
+                bird = previousBird;
+                showBird();
+            }
+        }
     }
 
     public void play() {
@@ -193,6 +262,7 @@ public class BirdsController implements Initializable {
             String birdName = "";
             String description;
             int size = 0;
+            //System.out.println(new File(".").getAbsolutePath());
             input = new Scanner(new File("BirdsDatabase.txt"));
             while (input.hasNext()) // read until  end of file
             {
