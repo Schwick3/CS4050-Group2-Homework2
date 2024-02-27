@@ -256,7 +256,10 @@ public class OrderedDictionary implements OrderedDictionaryADT {
             }
         }
 
-        return null; // Key found, but has no successor.
+        // return null;
+
+        // Key found, but has no successor.
+        throw new DictionaryException("There are no more objects to show");
     }
 
    
@@ -330,7 +333,10 @@ public class OrderedDictionary implements OrderedDictionaryADT {
             }
         }
 
-        return null; // Key found, but has no predecessor.
+        // return null;
+
+        // Key found, but has no predecessor.
+        throw new DictionaryException("There are no more objects to show");
     }
 
     /**
