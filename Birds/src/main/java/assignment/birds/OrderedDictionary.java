@@ -120,6 +120,13 @@ public class OrderedDictionary implements OrderedDictionaryADT {
             throw new DictionaryException("There is no record that matches the given key");
         }
 
+        // Check if the dictionary only has one element.
+        if (!(root.hasLeftChild()) && !(root.hasRightChild())) {
+            // root = null;
+            root.setData(null);
+            return;
+        }
+
         // Traverse the dictionary.
         Node current = root;
         int comparision = k.compareTo(current.getData().getDataKey());
@@ -138,12 +145,6 @@ public class OrderedDictionary implements OrderedDictionaryADT {
         if (current == null) {
             throw new DictionaryException("There is no record that matches the given key");
         }
-        // Check if the dictionary only has one element.
-        /*if (current.isLeaf()) {
-            current = null;
-            return;
-        }*/
-
         // Current is now the node to be removed.
 
         Node par = current.getParent(); // The Node's parent.
@@ -159,11 +160,12 @@ public class OrderedDictionary implements OrderedDictionaryADT {
                 newCurrent = current.getLeftChild();
 
             // Check if the node to be deleted is the root.
-            /*if (par == null) {
+            if (par == null) {
                 // return newCurrent;
+                newCurrent.setParent(null);
                 root = newCurrent;
                 return;
-            }*/
+            }
 
             // Check if the node to be deleted is it's parent's left or right
             // child and then replace this with newCurr (complete replacement).
@@ -219,6 +221,9 @@ public class OrderedDictionary implements OrderedDictionaryADT {
         }
 
         // Traverse the dictionary.
+
+        System.out.println(root.getData().getDataKey().getBirdName());
+
         Node current = root;
         int comparision;
 
