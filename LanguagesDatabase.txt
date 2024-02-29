@@ -1,0 +1,60 @@
+3
+Arabic
+A Central Semitic language with around 420 million native speakers. It is the official language of twenty seven states and territories, and has around fourteen different dialects including Egyptian, Levantine, and Sudanese. Arabic uses its own alphabet, called the Arabic Alphabet.
+3
+Bengali
+Is the official, national, and most widely spoken language in Bangladesh. It is the seventh most spoken language in the world, with around 240 million native speakers, and the fastest growing language in India. It's writing system is the Bengali-Assamese script, also known as the Bengali alphabet.
+3
+English
+Is an Indo-European language with about 380 million native speakers. It is the most spoken language in the world, with the third most native speakers. It is also the most spoken second language in the world. English uses the Latin alphabet for its writing system.
+2
+French
+Is a romance language as well as Indo-European language with around 76 million native speakers. It is the second most geographicly widespread language, next to English. Like English, and the other romance languages, it uses the Latin alphabet for its writing system.
+1
+Greek
+The modern version is a descendant of ancient greek, which holds an incredibly important place in the history of the western world. It has around 14 million native speakers, mostly in the Mediterranean. It has its own writing system, called the Greek alphabet, which has been used since around the 9th century BC.
+3
+Hindi
+Is the fourth most spoken language in the world, with 350 million native speakers. Hindi is also one of the fastest growing languages in India. It has its own writing system, officially called Devanagari.
+2
+Indonesian
+Is the primary and official language of Indonesia, with 43 million native speakers. Indonesian uses the Latin writing system.
+2
+Italian
+Is the official language of Italy and Switzerland, and has 65 million native speakers. It is a romance language of Indo-European decent, like French and Spanish. Also like French and Spanish, it uses the Latin alphabet for its writing system.
+2
+Japanese
+As the main language of the Japonic family, Japanese is a major world language and is the official language of Japan. It has around 128 million native speakers, mainly in Japan but also in the Japanese diaspora. It has its own writing system, a combination Kanji script and Kana script.
+1
+Latin
+Currently considered a dead language, Latin used to be the primary language of the Roman Empire/Republic and became a dominant language through their expansion. Its influence can be seen today in the latin alphabet, as well as modern scientific naming conventions. As a dead language it has no native speakers.
+3
+Mandarin Chinese
+The most spoken language in the world, Mandarin Chinese is a group of Chinese language dialects and is spoken by close to a billion people (940 million). Mandarin's writing system is Chinese characters, both simplified and traditional.
+1
+Marathi
+Marathi is an Indo-Aryan language and is primarily spoken by the Marathi people in India. It has 83 million native speakers, and is the third most spoken native language in India. Its writing system is the same as Hindi and is Devanagari.
+1
+Nigerian Pidgin
+Also known as Naija, Nigerian Pidgin is an English-based creole language with 4.7 million native speakers. Although it is commonly used throughout it has not been granted official language status. It uses the Latin writing system as its writing system.
+2
+Portuguese
+Is a romance language of the western variety similar to spanish. It has 230 million native speakers, and its the national language of Portugal and Brazil. Like the other romance languages, it uses the Latin writing system as its writing system.
+2
+Russian
+Is an east slavic language spoken primarily in Russia, but also in nearby countries like Belarus and Tajikistan, it has around 150 native million speakers. It is also one of the six official languages of the United Nations. For its writing system it uses the Cyrillic alphabet.
+1
+Sanskrit
+Similar to Latin, Sanskrit is a dead language that has no native speakers. Sanskrit is the sacred language of Hinduism, and has existed for nearly four thousand years. For its writing system, it uses Devanagari script.
+3
+Spanish
+Is a global language and one of the six official languages of the United Nations, and has about 500 million native speakers. It is a romance language, and as a descendant of latin it uses the Latin writing system as its writing system.
+1
+Turkish
+Turkish is the official language of Türkiye and is the largest of the Turkic languages. Turkish has 84 million native speakers. Interestingly, its writing system has changed relatively recently in 1935, from Arabic script to the Latin alphabet.
+1
+Urdu
+Along with English, Urdu is the national language of Pakistan and has 70 million native speakers. It has its own unique alphabet, called Perso-Arabic, also known as the Urdu alphabet.
+1
+Vietnamese
+Vietnamese is the national language of Vietnam and has 85 million native speakers as of 2019. It has three main dialects: Northern, Centeral, and Southern. For its writing system it uses its own Vietnamese Alphabet which is based upon the Latin alphabet.
