@@ -24,8 +24,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * @author Group 2 - Kene, Isaiah, Skylar
+ * @author Reference - Ouda
  *
- * @author Ouda
+ * This class carries out the functionality of the GUI.
  */
 public class BirdsController implements Initializable {
 

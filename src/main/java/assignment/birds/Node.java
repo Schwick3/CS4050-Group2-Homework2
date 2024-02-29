@@ -1,9 +1,10 @@
 package assignment.birds;
 
 /**
+ * @author Ouda
+ *
  * a class Node to represent the nodes of the binary search tree. Each node will
  * store a Record, and references to its left child, right child, and parent.
- *
  */
 
 public class Node {

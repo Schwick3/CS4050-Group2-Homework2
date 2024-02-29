@@ -1,3 +1,9 @@
+/**
+ * @author Ouda
+ *
+ * This interface represents exceptions thrown by the methods of Dictionary.
+ */
+
 package assignment.birds;
 
 public interface OrderedDictionaryADT {

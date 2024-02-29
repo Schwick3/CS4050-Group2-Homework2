@@ -1,3 +1,11 @@
+/**
+ * @author Group 2 - Kene, Isaiah, Skylar
+ * @author Reference - Ouda
+ *
+ * This class represents a dictionary which uses a binary
+ * tree structure for maintaining and traversing its nodes.
+ */
+
 package assignment.birds;
 
 public class OrderedDictionary implements OrderedDictionaryADT {
@@ -161,7 +169,6 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 
             // Check if the node to be deleted is the root.
             if (par == null) {
-                // return newCurrent;
                 newCurrent.setParent(null);
                 root = newCurrent;
                 return;

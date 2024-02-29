@@ -8,8 +8,13 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
- *
+ * @author Group 2 - Kene, Isaiah, Skylar
  * @author Ouda
+ *
+ * Implemented and utilized a dictionary to store a collection of
+ * languages and displayed their information on a GUI using JavaFX. The
+ * GUI allows for operations like searching for languages in the collection,
+ * playing their sounds, traversing to the next or previous languages, etc.
  */
 public class Birds extends Application {
 

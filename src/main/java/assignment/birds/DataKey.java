@@ -1,3 +1,10 @@
+/**
+ * @author Ouda
+ *
+ * This class represents data key in the bird record. Each key consists of:
+ * a birdName and birdSize which determine the ordering with other data keys.
+ */
+
 package assignment.birds;
 
 public class DataKey {
