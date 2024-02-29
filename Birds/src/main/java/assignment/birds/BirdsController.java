@@ -263,7 +263,7 @@ public class BirdsController implements Initializable {
             String description;
             int size = 0;
             //System.out.println(new File(".").getAbsolutePath());
-            input = new Scanner(new File("BirdsDatabase.txt"));
+            input = new Scanner(new File("LanguagesDatabase.txt"));
             while (input.hasNext()) // read until  end of file
             {
                 String data = input.nextLine();
@@ -282,7 +282,7 @@ public class BirdsController implements Initializable {
                 line++;
             }
         } catch (IOException e) {
-            System.out.println("There was an error in reading or opening the file: BirdsDatabase.txt");
+            System.out.println("There was an error in reading or opening the file: LanguagesDatabase.txt");
             System.out.println(e.getMessage());
         } catch (DictionaryException ex) {
             Logger.getLogger(BirdsController.class.getName()).log(Level.SEVERE, null, ex);
