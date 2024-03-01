@@ -6,7 +6,7 @@
  * tree structure for maintaining and traversing its nodes.
  */
 
-package assignment.birds;
+package assignment.languages;
 
 public class OrderedDictionary implements OrderedDictionaryADT {
 
@@ -22,10 +22,10 @@ public class OrderedDictionary implements OrderedDictionaryADT {
      *
      * @param k
      * @return
-     * @throws assignment/birds/DictionaryException.java
+     * @throws assignment/languages/DictionaryException.java
      */
     @Override
-    public BirdRecord find(DataKey k) throws DictionaryException {
+    public LanguageRecord find(DataKey k) throws DictionaryException {
         Node current = root;
         int comparison;
         if (root.isEmpty()) {         
@@ -59,10 +59,10 @@ public class OrderedDictionary implements OrderedDictionaryADT {
      * a record with the same key as r is already in the dictionary.
      *
      * @param r
-     * @throws birds.DictionaryException
+     * @throws languages.DictionaryException
      */
     @Override
-    public void insert(BirdRecord r) throws DictionaryException {
+    public void insert(LanguageRecord r) throws DictionaryException {
         // Write this method
 
         // Check if dictionary is empty.
@@ -73,7 +73,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 
         // Begin to traverse the dictionary.
         Node current = this.root;
-        Node newNode = new Node(r); // Node of the BirdRecord to insert.
+        Node newNode = new Node(r); // Node of the LanguageRecord to insert.
         int comparision;
         DataKey newKey = r.getDataKey(); // The key of the record to insert.
 
@@ -117,7 +117,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
      * DictionaryException if the record is not in the dictionary.
      *
      * @param k
-     * @throws birds.DictionaryException
+     * @throws languages.DictionaryException
      */
     @Override
     public void remove(DataKey k) throws DictionaryException {
@@ -130,7 +130,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 
         // Check if the dictionary only has one element.
         if (!(root.hasLeftChild()) && !(root.hasRightChild())) {
-            BirdRecord nullRef = new BirdRecord(null, null, null, null);
+            LanguageRecord nullRef = new LanguageRecord(null, null, null, null);
             root.setData(nullRef);
             return;
         }
@@ -216,10 +216,10 @@ public class OrderedDictionary implements OrderedDictionaryADT {
      *
      * @param k
      * @return
-     * @throws birds.DictionaryException
+     * @throws languages.DictionaryException
      */
     @Override
-    public BirdRecord successor(DataKey k) throws DictionaryException{
+    public LanguageRecord successor(DataKey k) throws DictionaryException{
         // Write this method
 
         // Check if dictionary is empty.
@@ -293,10 +293,10 @@ public class OrderedDictionary implements OrderedDictionaryADT {
      *
      * @param k
      * @return
-     * @throws birds.DictionaryException
+     * @throws languages.DictionaryException
      */
     @Override
-    public BirdRecord predecessor(DataKey k) throws DictionaryException {
+    public LanguageRecord predecessor(DataKey k) throws DictionaryException {
         // Write this method
 
         // Check if dictionary is empty.
@@ -369,7 +369,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
      * @return
      */
     @Override
-    public BirdRecord smallest() throws DictionaryException {
+    public LanguageRecord smallest() throws DictionaryException {
         // Write this method
 
         // Check if dictionary is empty.
@@ -392,7 +392,7 @@ public class OrderedDictionary implements OrderedDictionaryADT {
 	 * null if the dictionary is empty.
      */
     @Override
-    public BirdRecord largest() throws DictionaryException {
+    public LanguageRecord largest() throws DictionaryException {
         // Write this method
 
         // Check if dictionary is empty.

@@ -1,4 +1,4 @@
-package assignment.birds;
+package assignment.languages;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,16 +16,16 @@ import javafx.stage.Stage;
  * GUI allows for operations like searching for languages in the collection,
  * playing their sounds, traversing to the next or previous languages, etc.
  */
-public class Birds extends Application {
+public class Languages extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("birds-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("languages-view.fxml"));
 
         Scene scene = new Scene(root);
 
-        stage.getIcons().add(new Image("file:src/main/resources/assignment/birds/images/UMIcon.png"));
-        stage.setTitle("Birds Portal");
+        stage.getIcons().add(new Image("file:src/main/resources/assignment/languages/images/UMIcon.png"));
+        stage.setTitle("Languages Portal");
 
         stage.setScene(scene);
         stage.show();
