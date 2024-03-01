@@ -1,4 +1,4 @@
-package assignment.birds;
+package assignment.languages;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -27,14 +27,14 @@ import java.util.logging.Logger;
  *
  * @author Ouda
  */
-public class BirdsController implements Initializable {
+public class LanguagesController implements Initializable {
 
     @FXML
     private MenuBar mainMenu;
     @FXML
     private ImageView image;
     @FXML
-    private BorderPane BirdPortal;
+    private BorderPane LanguagePortal;
     @FXML
     private Label title;
     @FXML
@@ -50,8 +50,8 @@ public class BirdsController implements Initializable {
     Media media;
     MediaPlayer player;
     OrderedDictionary database = null;
-    BirdRecord bird = null;
-    int birdSize = 1;
+    LanguageRecord language = null;
+    int languageSize = 1;
 
     @FXML
     public void exit() {
@@ -60,59 +60,59 @@ public class BirdsController implements Initializable {
     }
 
     public void find() {
-        DataKey key = new DataKey(this.name.getText(), birdSize);
+        DataKey key = new DataKey(this.name.getText(), languageSize);
         try {
-            bird = database.find(key);
-            showBird();
+            language = database.find(key);
+            showLanguage();
         } catch (DictionaryException ex) {
             displayAlert(ex.getMessage());
         }
     }
 
     public void delete() {
-        BirdRecord previousBird = null;
+        LanguageRecord previousLanguage = null;
         try {
-            previousBird = database.predecessor(bird.getDataKey());
+            previousLanguage = database.predecessor(language.getDataKey());
         } catch (DictionaryException ex) {
 
         }
-        BirdRecord nextBird = null;
+        LanguageRecord nextLanguage = null;
         try {
-            nextBird = database.successor(bird.getDataKey());
+            nextLanguage = database.successor(language.getDataKey());
         } catch (DictionaryException ex) {
 
         }
-        DataKey key = bird.getDataKey();
+        DataKey key = language.getDataKey();
         try {
             database.remove(key);
         } catch (DictionaryException ex) {
             System.out.println("Error in delete "+ ex);
         }
         if (database.isEmpty()) {
-            this.BirdPortal.setVisible(false);
-            displayAlert("No more birds in the database to show");
+            this.LanguagePortal.setVisible(false);
+            displayAlert("No more languages in the database to show");
         } else {
-            if (previousBird != null) {
-                bird = previousBird;
-                showBird();
-            } else if (nextBird != null) {
-                bird = nextBird;
-                showBird();
+            if (previousLanguage != null) {
+                language = previousLanguage;
+                showLanguage();
+            } else if (nextLanguage != null) {
+                language = nextLanguage;
+                showLanguage();
             }
         }
     }
 
-    private void showBird() {
+    private void showLanguage() {
         play.setDisable(false);
         puase.setDisable(true);
         if (player != null) {
             player.stop();
         }
-        String img = bird.getImage();
-        Image birdImage = new Image("file:src/main/resources/assignment/birds/images/" + img);
-        image.setImage(birdImage);
-        title.setText(bird.getDataKey().getBirdName());
-        about.setText(bird.getAbout());
+        String img = language.getImage();
+        Image languageImage = new Image("file:src/main/resources/assignment/languages/images/" + img);
+        image.setImage(languageImage);
+        title.setText(language.getDataKey().getLanguageName());
+        about.setText(language.getAbout());
     }
 
     private void displayAlert(String msg) {
@@ -126,7 +126,7 @@ public class BirdsController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(scene);
 
-            stage.getIcons().add(new Image("file:src/main/resources/assignment/birds/images/UMIcon.png"));
+            stage.getIcons().add(new Image("file:src/main/resources/assignment/languages/images/UMIcon.png"));
             stage.setTitle("Dictionary Exception");
             controller.setAlertText(msg);
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -140,13 +140,13 @@ public class BirdsController implements Initializable {
     public void getSize() {
         switch (this.size.getValue().toString()) {
             case "Small":
-                this.birdSize = 1;
+                this.languageSize = 1;
                 break;
             case "Medium":
-                this.birdSize = 2;
+                this.languageSize = 2;
                 break;
             case "Large":
-                this.birdSize = 3;
+                this.languageSize = 3;
                 break;
             default:
                 break;
@@ -156,21 +156,21 @@ public class BirdsController implements Initializable {
     public void first() {
         // Write this method
 
-        BirdRecord initialBird = null;
+        LanguageRecord initialLanguage = null;
         try {
-            initialBird = database.smallest();
+            initialLanguage = database.smallest();
         }
         catch (DictionaryException ex) {
             displayAlert(ex.getMessage());
         }
 
         if (database.isEmpty()) {
-            this.BirdPortal.setVisible(false);
-            displayAlert("No more birds in the database to show");
+            this.LanguagePortal.setVisible(false);
+            displayAlert("No more languages in the database to show");
         } else {
-            if (initialBird != null) {
-                bird = initialBird;
-                showBird();
+            if (initialLanguage != null) {
+                language = initialLanguage;
+                showLanguage();
             }
         }
     }
@@ -178,21 +178,21 @@ public class BirdsController implements Initializable {
     public void last() {
         // Write this method
 
-        BirdRecord lastBird = null;
+        LanguageRecord lastLanguage = null;
         try {
-            lastBird = database.largest();
+            lastLanguage = database.largest();
         }
         catch (DictionaryException ex) {
             displayAlert(ex.getMessage());
         }
 
         if (database.isEmpty()) {
-            this.BirdPortal.setVisible(false);
-            displayAlert("No more birds in the database to show");
+            this.LanguagePortal.setVisible(false);
+            displayAlert("No more languages in the database to show");
         } else {
-            if (lastBird != null) {
-                bird = lastBird;
-                showBird();
+            if (lastLanguage != null) {
+                language = lastLanguage;
+                showLanguage();
             }
         }
     }
@@ -200,20 +200,20 @@ public class BirdsController implements Initializable {
     public void next() {
         // Write this method;
 
-        BirdRecord nextBird = null;
+        LanguageRecord nextLanguage = null;
         try {
-            nextBird = database.successor(bird.getDataKey());
+            nextLanguage = database.successor(language.getDataKey());
         } catch (DictionaryException ex) {
             displayAlert(ex.getMessage());
         }
 
         if (database.isEmpty()) {
-            this.BirdPortal.setVisible(false);
-            displayAlert("No more birds in the database to show");
+            this.LanguagePortal.setVisible(false);
+            displayAlert("No more languages in the database to show");
         } else {
-            if (nextBird != null) {
-                bird = nextBird;
-                showBird();
+            if (nextLanguage != null) {
+                language = nextLanguage;
+                showLanguage();
             }
         }
     }
@@ -221,25 +221,25 @@ public class BirdsController implements Initializable {
     public void previous() {
         // Write this method
 
-        BirdRecord previousBird = null;
+        LanguageRecord previousLanguage = null;
         try {
-            previousBird = database.predecessor(bird.getDataKey());
+            previousLanguage = database.predecessor(language.getDataKey());
         } catch (DictionaryException ex) {
             displayAlert(ex.getMessage());
         }
         if (database.isEmpty()) {
-            this.BirdPortal.setVisible(false);
-            displayAlert("No more birds in the database to show");
+            this.LanguagePortal.setVisible(false);
+            displayAlert("No more languages in the database to show");
         } else {
-            if (previousBird != null) {
-                bird = previousBird;
-                showBird();
+            if (previousLanguage != null) {
+                language = previousLanguage;
+                showLanguage();
             }
         }
     }
 
     public void play() {
-        String filename = "src/main/resources/assignment/birds/sounds/" + bird.getSound();
+        String filename = "src/main/resources/assignment/languages/sounds/" + language.getSound();
         media = new Media(new File(filename).toURI().toString());
         player = new MediaPlayer(media);
         play.setDisable(true);
@@ -259,7 +259,7 @@ public class BirdsController implements Initializable {
         Scanner input;
         int line = 0;
         try {
-            String birdName = "";
+            String languageName = "";
             String description;
             int size = 0;
             //System.out.println(new File(".").getAbsolutePath());
@@ -272,11 +272,11 @@ public class BirdsController implements Initializable {
                         size = Integer.parseInt(data);
                         break;
                     case 1:
-                        birdName = data;
+                        languageName = data;
                         break;
                     default:
                         description = data;
-                        database.insert(new BirdRecord(new DataKey(birdName, size), description, birdName + ".mp3", birdName + ".jpg"));
+                        database.insert(new LanguageRecord(new DataKey(languageName, size), description, languageName + ".mp3", languageName + ".jpg"));
                         break;
                 }
                 line++;
@@ -285,9 +285,9 @@ public class BirdsController implements Initializable {
             System.out.println("There was an error in reading or opening the file: LanguagesDatabase.txt");
             System.out.println(e.getMessage());
         } catch (DictionaryException ex) {
-            Logger.getLogger(BirdsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LanguagesController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.BirdPortal.setVisible(true);
+        this.LanguagePortal.setVisible(true);
         this.first();
     }
 
